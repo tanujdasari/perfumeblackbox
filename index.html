@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfume Store</title>
+    <style>
+        body {
+            background-image: url('your_background_image_url');
+            font-family: Arial, sans-serif;
+        }
+      .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+      .product {
+            width: 300px;
+            margin: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+      .product img {
+            width: 100%;
+        }
+      .product-description {
+            padding: 15px;
+        }
+      .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+      .form-header {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>Perfume Store</div>
+        <div>
+            <button>Home</button>
+            <button>Products</button>
+            <button>About Us</button>
+        </div>
+    </div>
+    <div class="products">
+        <div class="product">
+            <img src="perfume_men_1_image_url" alt="Perfume Men 1">
+            <div class="product-description">
+                <h3>Perfume Men 1: AZZARO Chrome Eau de Toilette Spray for Men by Azzaro.</h3>
+                <p>More specific details</p>
+                <button class="add-to-cart" data-perfume="Perfume Men 1">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="perfume_men_2_image_url" alt="Perfume Men 2">
+            <div class="product-description">
+                <h3>Perfume Men 2: Brit Eau de Toilette Spray for Men by Burberry.</h3>
+                <p>More specific details</p>
+                <button class="add-to-cart" data-perfume="Perfume Men 2">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Repeat the product div for each perfume -->
+    </div>
+    <div class="footer">
+        <div class="form">
+            <div class="form-header">Subscribe to our newsletter</div>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div>&copy; 2022 Perfume Store</div>
+    </div>
+    <script>
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cart = [];
+
+        addToCartButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const perfume = button.dataset.perfume;
+                cart.push(perfume);
+                alert(`Added ${perfume} to cart.`);
+            });
+        });
+    </script>
+</body>
+</html>
